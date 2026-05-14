@@ -1,6 +1,6 @@
 public class Stock {
-    private String symbol;
-    private String name;
+    private final String symbol;
+    private final String name;
     private double currentPrice;
 
     public Stock(String symbol, String name, double initialPrice) {

@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class TradingPlatform {
 
-    private Market market;
-    private TradingDAO dao;
-    private Scanner sc;
+    private final Market market;
+    private final TradingDAO dao;
+    private final Scanner sc;
     private User currentUser;
 
     public TradingPlatform() {

@@ -3,8 +3,8 @@ import java.util.Map;
 import java.util.Random;
 
 public class Market {
-    private Map<String, Stock> availableStocks;
-    private Random random;
+    private final Map<String, Stock> availableStocks;
+    private final Random random;
 
     public Market() {
         availableStocks = new HashMap<>();

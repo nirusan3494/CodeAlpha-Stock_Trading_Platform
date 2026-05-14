@@ -1,6 +1,6 @@
 public class User {
-    private int userId;
-    private String username;
+    private final int userId;
+    private final String username;
     private double cashBalance;
 
     public User(int userId, String username, double cashBalance) {

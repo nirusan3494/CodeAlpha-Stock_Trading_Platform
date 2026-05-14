@@ -3,7 +3,7 @@ import java.util.Properties;
 
 public class DataBaseConfig {
 
-    private static Properties props = new Properties();
+    private static final Properties props = new Properties();
 
     static {
         try {

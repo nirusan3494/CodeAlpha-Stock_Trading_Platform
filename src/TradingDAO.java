@@ -54,7 +54,7 @@ public class TradingDAO {
     }
 
 
-    public boolean executeTrade(int userId, String type, String symbol, int qty, double price) {
+    public void executeTrade(int userId, String type, String symbol, int qty, double price) {
         double totalAmount = qty * price;
         String updateBalance;
 
@@ -62,7 +62,7 @@ public class TradingDAO {
             double balance = getCashBalance(userId);
             if (balance < totalAmount) {
                 System.out.println("Insufficient balance!");
-                return false;
+                return;
             }
             updateBalance = "UPDATE users SET cash_balance = cash_balance - ? WHERE user_id = ?";
         } else {
@@ -96,7 +96,6 @@ public class TradingDAO {
                 // Commit all together
                 con.commit();
                 System.out.println("Trade Successful!");
-                return true;
 
             } catch (SQLException e) {
                 con.rollback();
@@ -106,7 +105,6 @@ public class TradingDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
     }
 
     // Update holdings table
